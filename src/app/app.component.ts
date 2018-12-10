@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'basic';
+  username: string = '';
+  is_editable: boolean = false;
+
+  buttonClicked() {
+    this.username = 'Yay I am clicked!'
+  }
+
+  isDisabled() {
+    if (this.username.length > 10) {
+     return this.is_editable = true;
+    } else {
+      return this.is_editable;
+    }
+  }
 }
