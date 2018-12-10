@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
+import {UIComponent} from "../../../shared/ui/ui.component";
 
 @Component({
   selector: 'app-recipe-item',
   templateUrl: './recipe-item.component.html',
   styleUrls: ['./recipe-item.component.scss']
 })
-export class RecipeItemComponent implements OnInit {
+export class RecipeItemComponent extends UIComponent implements OnInit {
 
-  constructor() { }
+  constructor(elementRef: ElementRef, renderer: Renderer2) {
+    super(elementRef, renderer);
+  }
 
   ngOnInit() {
   }

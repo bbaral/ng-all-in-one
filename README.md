@@ -14,6 +14,10 @@ Content Cell  | Content Cell
 Content Cell  | Content Cell
 Content Cell  | Content Cell
 
+## Sources && Disclosure
+
+All the related images and ingredient are from internet and solely intended to use for practice purpose only.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
