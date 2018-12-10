@@ -13,7 +13,7 @@ export class ShoppingListComponent implements OnInit {
 
   ingredientList: IngredientModel[] = [
     new IngredientModel('Apple', 10 ),
-    new IngredientModel('Tomato', 10 , '40 second')
+    new IngredientModel('Tomato', 15 )
   ];
 
   constructor() { }
