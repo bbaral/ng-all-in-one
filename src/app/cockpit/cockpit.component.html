@@ -3,12 +3,12 @@
     <div class="col-xs-12">
       <h3>Add new Servers type, Server Name or Blueprints</h3>
       <label>Server Name</label>
-      <input type="text" class="form-control" [(ngModel)]="newServerName">
+      <input #serverNameInput type="text" class="form-control">
       <label>Server Content</label>
-      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <input #anotherServerNameInput type="text" class="form-control">
       <br>
-      <button class="btn btn-primary" (click)="onAddServerFromCockpit()">Add Server</button>
-      <button class="btn btn-primary" (click)="onAddBluePrintFromCockpit()">Add Server BluePrint</button>
+      <button class="btn btn-primary" (click)="onAddServerFromCockpit(serverNameInput)">Add Server</button>
+      <button class="btn btn-primary" (click)="onAddBluePrintFromCockpit(anotherServerNameInput)">Add Server BluePrint</button>
     </div>
   </div>
 </div>
