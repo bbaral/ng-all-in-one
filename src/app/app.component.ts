@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  username: string = '';
-  is_editable: boolean = false;
+  username = '';
+  is_editable = false;
 
   buttonClicked() {
-    this.username = 'Yay I am clicked!'
+    this.username = 'Yay I am clicked!';
   }
 
   isDisabled() {
