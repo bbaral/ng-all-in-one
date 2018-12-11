@@ -11,7 +11,7 @@ export class AppComponent {
 
   onAddServerFromApp(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
-      type: 'Server',
+      type: 'server',
       name: serverData.serverName,
       content: serverData.serverContent
     });
@@ -19,7 +19,7 @@ export class AppComponent {
 
   onAddBluePrintFromApp(blueprintData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
-      type: 'Blueprint',
+      type: 'blueprint',
       name: blueprintData.serverName,
       content: blueprintData.serverContent
     });
