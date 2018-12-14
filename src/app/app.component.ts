@@ -6,18 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  username = '';
-  is_editable = false;
+  accounts = [
+    {
+      name: 'Master Account',
+      status: 'active'
+    },
+    {
+      name: 'Test Account',
+      status: 'inactive'
+    },
+    {
+      name: 'Hidden Account',
+      status: 'unknown'
+    }
+  ];
 
-  buttonClicked() {
-    this.username = 'Yay I am clicked!';
+  onAccountAdded(newAccount: {name: string, status: string}) {
+    this.accounts.push(newAccount);
   }
 
-  isDisabled() {
-    if (this.username.length > 10) {
-     return this.is_editable = true;
-    } else {
-      return this.is_editable;
-    }
+  onStatusChanged(updateInfo: {id: number, newStatus: string}) {
+    this.accounts[updateInfo.id].status = updateInfo.newStatus;
   }
 }
