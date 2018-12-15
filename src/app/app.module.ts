@@ -13,7 +13,6 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { UIComponent } from './shared/ui/ui.component';
 import {HttpClientModule} from '@angular/common/http';
-import { PreparationComponent } from './preparation/preparation.component';
 import {DropdownDirective} from './shared/dropdown.directive';
 
 @NgModule({
@@ -26,7 +25,6 @@ import {DropdownDirective} from './shared/dropdown.directive';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    PreparationComponent,
     UIComponent,
     DropdownDirective
   ],
