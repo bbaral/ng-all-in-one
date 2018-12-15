@@ -14,6 +14,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { UIComponent } from './shared/ui/ui.component';
 import {HttpClientModule} from '@angular/common/http';
 import {DropdownDirective} from './shared/dropdown.directive';
+import {ShoppingListService} from './services/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import {DropdownDirective} from './shared/dropdown.directive';
     HttpClientModule,
     AgGridModule.withComponents([])
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
