@@ -1,18 +1,19 @@
-import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
-import {UIComponent} from "../shared/ui/ui.component";
+import {Component, ElementRef, EventEmitter, Output, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent extends UIComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor(elementRef: ElementRef, renderer: Renderer2) {
-    super(elementRef, renderer);
+  @Output() featureSelected = new EventEmitter<string>();
+
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
   }
 
-  ngOnInit() {
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
   }
 
 }
