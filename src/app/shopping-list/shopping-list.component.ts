@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {IngredientModel} from '../models/ingredient.model';
 import * as Immutable from 'Immutable';
+import {ShoppingListService} from '../services/shopping-list.service';
+
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
@@ -8,17 +10,18 @@ import * as Immutable from 'Immutable';
 })
 export class ShoppingListComponent implements OnInit {
 
+  ingredients: IngredientModel[];
   iStyle: {[name: string]: string} = {};
   immutStyle: Immutable.Map<string, string> = Immutable.Map<string, string>();
 
-  ingredientList: IngredientModel[] = [
-    new IngredientModel('Apple', 10 ),
-    new IngredientModel('Tomato', 15 )
-  ];
-
-  constructor() { }
+  constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit() {
+    this.ingredients = this.shoppingListService.getIngredients();
+  }
+
+  onIngredientAdded(ingredient: IngredientModel) {
+    this.shoppingListService.addIngredient(ingredient);
   }
 
 }
