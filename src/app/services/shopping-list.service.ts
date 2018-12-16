@@ -3,7 +3,6 @@ import {IngredientModel} from '../models/ingredient.model';
 
 @Injectable()
 export class ShoppingListService {
-
   ingredientList: IngredientModel[] = [
     new IngredientModel('Apple', 10 ),
     new IngredientModel('Tomato', 15 )
