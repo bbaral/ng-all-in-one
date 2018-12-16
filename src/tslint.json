@@ -15,6 +15,7 @@
         ],
       "no-trailing-whitespace": false,
       "no-inferrable-types": false,
-      "max-line-length": false
+      "max-line-length": false,
+      "quotemark": false
     }
 }

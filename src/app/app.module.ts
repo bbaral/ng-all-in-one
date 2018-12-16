@@ -14,7 +14,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { UIComponent } from './shared/ui/ui.component';
 import {HttpClientModule} from '@angular/common/http';
 import {DropdownDirective} from './shared/dropdown.directive';
-import {ShoppingListService} from './services/shopping-list.service';
+import {RecipeService} from './services/recipe.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import {ShoppingListService} from './services/shopping-list.service';
     HttpClientModule,
     AgGridModule.withComponents([])
   ],
-  providers: [ShoppingListService],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
