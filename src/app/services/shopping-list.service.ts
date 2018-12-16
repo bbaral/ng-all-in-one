@@ -3,11 +3,11 @@ import {IngredientModel} from '../models/ingredient.model';
 
 @Injectable()
 export class ShoppingListService {
+  ingredientsChanged = new EventEmitter<IngredientModel[]>();
   ingredientList: IngredientModel[] = [
     new IngredientModel('Apple', 10 ),
     new IngredientModel('Tomato', 15 )
   ];
-  ingredientsChanged = new EventEmitter<IngredientModel[]>();
 
   constructor() { }
 
@@ -17,6 +17,7 @@ export class ShoppingListService {
 
   addIngredient(ingredient: IngredientModel) {
     this.ingredientList.push(ingredient);
+    this.ingredientsChanged.emit(this.ingredientList.slice());
   }
 
   addIngredients(ingredients: IngredientModel[]) {
