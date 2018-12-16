@@ -16,9 +16,9 @@ export class RecipeService {
         new IngredientModel('Meat', 1),
         new IngredientModel('Meat', 20)
       ]),
-    new RecipeModel('Chicken Alfredo',
-      'Chicken Alfredo Description',
-      'https://hips.hearstapps.com/delish/assets/17/24/1497458683-delish-one-pot-chicken-alfredo-1-1024.jpg',
+    new RecipeModel('Chicken Curry',
+      'Chicken Curry',
+      'https://hips.hearstapps.com/delish/assets/17/31/1501791674-delish-chicken-curry-horizontal.jpg',
       [
         new IngredientModel('Buns', 2),
         new IngredientModel('Meat', 1)
