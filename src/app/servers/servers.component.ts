@@ -23,7 +23,7 @@ export class ServersComponent implements OnInit {
   }
 
   reloadPage() {
-    this.router.navigate(['servers'], {relativeTo: this.activedRoute});
+    //this.router.navigate(['servers'], {relativeTo: this.activedRoute});
   }
 
   goToUsers() {
