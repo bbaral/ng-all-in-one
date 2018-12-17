@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServersService} from '../services/servers.service';
 
 @Component({
   selector: 'app-servers',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.scss']
 })
 export class ServersComponent implements OnInit {
+  private servers: {id: number, name: string, status: string}[] = [];
 
-  constructor() { }
+  constructor(private serversService: ServersService) { }
 
   ngOnInit() {
+    this.servers = this.serversService.getServers();
   }
 
 }
