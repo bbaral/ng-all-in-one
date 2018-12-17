@@ -1,2 +1,16 @@
-<p>User with ID _ID_ loaded.</p>
-<p>User name is _NAME_</p>
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <p>User with ID {{ user.id }} loaded.</p>
+    <p>User name is {{user.name}}</p>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <a [routerLink]="['/users', 10, 'Anna']">Load Anna (10)</a>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+  <div class="container">
+      <button class="btn" (click)="goBackToServers()">
+        <span  class="glyphicon glyphicon-arrow-left"></span>
+        Go Back to Servers</button>
+    </div>
+  </div>
+</div>
