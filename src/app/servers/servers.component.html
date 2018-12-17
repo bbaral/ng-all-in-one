@@ -11,9 +11,15 @@
   </div>
   <div class="col-xs-12 col-sm-4">
     <br>
-    <button class="btn btn-info" (click)="goBack()">
+    <div class="container">
+    <button class="btn" (click)="goBack()">
     <span  class="glyphicon glyphicon-arrow-left"></span>
     Go Back to Home Page</button>
+    <button class="btn" (click)="reloadUsers()">
+   Reload Users
+      <span  class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+    </div>
     <hr>
     <app-edit-server></app-edit-server>
     <hr>

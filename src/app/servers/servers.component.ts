@@ -19,7 +19,10 @@ export class ServersComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/']);
+  }
 
+  reloadUsers() {
+    this.router.navigate(['/users']);
   }
 
 }
