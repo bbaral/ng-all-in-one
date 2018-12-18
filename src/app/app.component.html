@@ -1,35 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-    <label>Two way Binding</label>
-    <input type="text" class="form-control" [(ngModel)]="username">
-    <p>{{username}}</p>
-    <br>
-    <br>
-    <button class="btn btn-primary" [disabled]="username.length >= 10 ? true: false" (click)="buttonClicked()">Click Me!</button>
-      <p *ngIf="username.length >=10">Your character length is greater then or equal to 10</p>
-      <p *ngIf="username.length < 10">Keep on typing</p>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <a routerLink="/">Home</a>
+      <a [routerLink]="['user', 1]">User 1</a>
+      <a [routerLink]="['user', 2]">User 2</a>
+    </div>
   </div>
-</div>
-</div>
-<br><br>
-<hr>
-<router-outlet></router-outlet>
-<br><br>
-
-<div class="container">
+  <hr>
   <div class="row">
-    <div class="col-xs-12">
-      <h3>Assignment</h3>
-      <p>Add a button which says Display Details</p>
-      <p>Add a paragraph with any content of your choice (eg: `Secret Password`)</p>
-      <p>Toggle the display of that paragraph with the button created in the first step</p>
-      <p>Log all button clicks in an array and output that array below the secret Paragraph (maybe log a timestamp
-      or simply an incrementing number<p>
-      <p>Starting at the 5th log item, give at future log items a blue backgroundColor (via ngStyle and with Color (ngclass))</p>
-      <app-details></app-details>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
