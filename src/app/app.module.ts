@@ -10,6 +10,7 @@ import { ServerComponent } from './servers/server/server.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import {ServersService} from './services/servers.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {ServersService} from './services/servers.service';
     ServerComponent,
     UsersComponent,
     UserComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
