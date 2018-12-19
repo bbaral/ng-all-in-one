@@ -1,7 +1,13 @@
-import {ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {interval, Observable} from 'rxjs';
-import {Observer} from 'rxjs/Observer';
-import {Subscription} from 'rxjs/Subscription';
+import { Component, OnDestroy, OnInit} from '@angular/core';
+import {BehaviorSubject,
+  interval,
+  Observable,
+  Observer,
+  of,
+  ReplaySubject,
+  Subject,
+  Subscription} from 'rxjs';
+import {combineAll, concatAll, map, take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -10,19 +16,23 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  number: number = 0;
+  id: number = 0;
+  combine: string[] = [];
   someValue: any;
+  intervalSubscribe: Subscription;
   subscription$: Subscription;
-  anotherSubscription$: Subscription;
-  constructor(private cdr: ChangeDetectorRef) { }
+  combineAllSubs: Subscription;
+  behaveSubject: Subscription;
+
+  constructor() { }
 
   ngOnInit() {
-    const myNumber = interval(1000);
-
-    this.subscription$ = myNumber.subscribe((val: number) => {
-      this.number = val;
-      console.log(this.number);
-    });
+    const myNumbers = interval(1000).pipe(map(
+      data => of(data * 2)),
+      concatAll());
+    this.intervalSubscribe = myNumbers.subscribe(
+      value => this.id = value
+    );
 
     const hello = Observable.create((observer: Observer<any>) => {
       setTimeout(() => {
@@ -34,29 +44,23 @@ export class HomeComponent implements OnInit, OnDestroy {
       }, 400);
     });
 
-    this.anotherSubscription$ = hello.subscribe((val: any) => {
+    this.subscription$ = hello.subscribe((val: any) => {
       this.someValue = val;
     });
 
-  }
+    const combine = interval(1000).pipe(take(2));
+    const x = combine.pipe(map(val =>
+      interval(1000).pipe(map(i => `Result (${val}): ${i}`), take(5))));
 
-  TimerButtonStop() {
-    this.cdr.detach();
-  }
+    const result = x.pipe(combineAll());
+    this.combineAllSubs = result.subscribe(res => this.combine = res);
 
-  TimerButtonStart() {
-    this.cdr.reattach();
-  }
-
-  TimerButtonCheck() {
-    this.cdr.detectChanges();
-  }
+}
 
   ngOnDestroy(): void {
+    this.intervalSubscribe.unsubscribe();
     this.subscription$.unsubscribe();
-    this.anotherSubscription$.unsubscribe();
     console.log('ngOnDestroy call');
   }
 
 }
-
