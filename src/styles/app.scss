@@ -1,1 +1,9 @@
+@import "typography";
+body {
+  font-family: $sans-font;
+  margin: 0px!important;
+  font-size: $body-font-size;
+  width: calc(100vw - 35px);
+  position: absolute;
+}
 
