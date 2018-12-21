@@ -1,12 +1,15 @@
-<a href="#"
-   class="list-group-item clearfix"
-   (click)="onSelected()">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-    <p class="list-group-item-text">{{ recipe.description }}</p>
-  </div>
-  <span class="pull-right">
-        <img [src]="recipe.imagePath" alt="{{ recipe.name }}"
-             class="img-responsive" style="max-height: 50px;">
+<div class="w3-container">
+  <ul class="w3-ul w3-card-4">
+    <li class="w3-bar"  (click)="onItemSelect()">
+      <span class="w3-bar-item w3-button w3-white w3-xlarge w3-right">
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </span>
-</a>
+      <img [src]="recipeItem.imagePath" class="w3-bar-item w3-round w3-large" style="width:110px">
+      <div class="w3-bar-item">
+        <span class="w3-large" [innerHtml]="recipeItem.name"></span>
+        <br>
+        <span [innerHtml]="recipeItem.description"></span>
+      </div>
+    </li>
+  </ul>
+</div>
