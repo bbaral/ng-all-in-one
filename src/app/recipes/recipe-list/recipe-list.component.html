@@ -1,13 +1,12 @@
-<div class="row">
-  <div class="col-xs-12">
-    <button class="btn btn-success">New Recipe</button>
+<div class="w3-container">
+  <div class="w3-row">
+    <button class="w3-button w3-teal w3-round">New Recipe</button>
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12">
-    <app-recipe-item
-    *ngFor="let recipeEl of recipes" [recipe]="recipeEl"></app-recipe-item>
+<div class="w3-container">
+  <div class="w3-row">
+    <app-recipe-item  *ngFor="let recipe of recipeList" [recipeItem]="recipe" (recipeItemSelected)="displayRecipeItem(recipe)"></app-recipe-item>
   </div>
 </div>
 
