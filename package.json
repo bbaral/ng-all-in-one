@@ -23,7 +23,6 @@
     "@swimlane/ngx-datatable": "^14.0.0",
     "ag-grid-angular": "^19.1.2",
     "ag-grid-community": "^19.1.4",
-    "bootstrap": "^3.3.7",
     "clipboard": "^2.0.4",
     "core-js": "^2.5.4",
     "immutable": "^4.0.0-rc.12",
