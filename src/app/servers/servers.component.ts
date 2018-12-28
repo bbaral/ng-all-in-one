@@ -8,11 +8,12 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./servers.component.scss']
 })
 export class ServersComponent implements OnInit {
-  private servers: {id: number, name: string, status: string}[] = [];
+
+  servers: {id: number, name: string, status: string}[] = [];
 
   constructor(private serversService: ServersService,
               private router: Router,
-              private activedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.servers = this.serversService.getServers();
@@ -23,7 +24,7 @@ export class ServersComponent implements OnInit {
   }
 
   reloadPage() {
-    //this.router.navigate(['servers'], {relativeTo: this.activedRoute});
+    //this.router.navigate(['servers'], {relativeTo: this.activatedRoute});
   }
 
   goToUsers() {
