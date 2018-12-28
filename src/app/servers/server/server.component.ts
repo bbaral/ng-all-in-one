@@ -21,9 +21,9 @@ export class ServerComponent implements OnInit {
       this.server = this.serversService.getServer(+params['id']);
     });
   }
-  
+
   onEdit() {
     this.router.navigate(['edit'], {relativeTo: this.activatedRoute, queryParamsHandling: 'preserve'});
   }
-  
+
 }
