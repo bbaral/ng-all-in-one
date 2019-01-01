@@ -1,35 +1,33 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
-import {Subscription} from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit, OnDestroy {
   user: {id: number, name: string};
   paramsSubscription: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
-  }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.user = {
-      id: this.activatedRoute.snapshot.params['id'],
-      name: this.activatedRoute.snapshot.params['name']
+      id: this.route.snapshot.params['id'],
+      name: this.route.snapshot.params['name']
     };
-    this.paramsSubscription = this.activatedRoute.params.subscribe((params: Params) => {
-      this.user.id = params['id'];
-      this.user.name = params['name'];
-    });
+    this.paramsSubscription = this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.user.id = params['id'];
+          this.user.name = params['name'];
+        }
+      );
   }
 
-  goBackToServers() {
-    this.router.navigate(['/servers']);
-  }
-
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.paramsSubscription.unsubscribe();
   }
 
