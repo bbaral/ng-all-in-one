@@ -1,11 +1,15 @@
-<div class="w3-container">
-  <app-shopping-edit (ingredientAdded)="onIngredientAdded($event)"></app-shopping-edit>
-</div>
-<br>
-<div class="w3-container">
-  <ul class="w3-ul w3-card w3-hoverable" style="width: 30%">
-    <li *ngFor="let ingredient of ingredientList">
-      <span>{{ingredient.name}} ({{ingredient.amount}})</span>
-    </li>
-  </ul>
+<div class="row">
+  <div class="col-xs-10">
+    <app-shopping-edit></app-shopping-edit>
+    <hr>
+    <ul class="list-group">
+      <a
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let ingredient of ingredients"
+      >
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </a>
+    </ul>
+  </div>
 </div>

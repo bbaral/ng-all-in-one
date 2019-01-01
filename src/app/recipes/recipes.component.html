@@ -1,11 +1,13 @@
-<div class="w3-container">
-  <div class="w3-row">
-    <button class="w3-button w3-teal w3-round">New Recipe</button>
+<div class="row">
+  <div class="col-md-5">
+    <app-recipe-list></app-recipe-list>
   </div>
-</div>
-<hr>
-<div class="w3-container">
-  <div class="w3-row">
-    <app-recipe-item  *ngFor="let recipe of recipeList" [recipeItem]="recipe" (recipeItemSelected)="displayRecipeItem(recipe)"></app-recipe-item>
+  <div class="col-md-7">
+    <app-recipe-detail
+      *ngIf="selectedRecipe; else infoText"
+      [recipe]="selectedRecipe"></app-recipe-detail>
+    <ng-template #infoText>
+      <p>Please select a Recipe!</p>
+    </ng-template>
   </div>
 </div>

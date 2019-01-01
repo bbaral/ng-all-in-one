@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {IngredientModel} from '../models/ingredient.model';
-import * as Immutable from 'Immutable';
-import {ShoppingListService} from '../services/shopping-list.service';
+
+import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from './shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.scss']
+  styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
+  ingredients: Ingredient[];
 
-  ingredients: IngredientModel[];
-  iStyle: {[name: string]: string} = {};
-  immutStyle: Immutable.Map<string, string> = Immutable.Map<string, string>();
-
-  constructor(private shoppingListService: ShoppingListService) { }
+  constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
-    this.ingredients = this.shoppingListService.getIngredients();
-    this.shoppingListService.ingredientsChanged.subscribe((ingredients: IngredientModel[]) => {
-      this.ingredients = ingredients;
-    });
+    this.ingredients = this.slService.getIngredients();
+    this.slService.ingredientsChanged
+      .subscribe(
+        (ingredients: Ingredient[]) => {
+          this.ingredients = ingredients;
+        }
+      );
   }
-
 }

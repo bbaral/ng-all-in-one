@@ -1,15 +1,15 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {RecipeModel} from '../../models/recipe.model';
-import {RecipeService} from '../../services/recipe.service';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
-  styleUrls: ['./recipe-detail.component.scss']
+  styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-
-  @Input() recipeDetailInput: RecipeModel;
+  @Input() recipe: Recipe;
 
   constructor(private recipeService: RecipeService) { }
 
@@ -17,7 +17,7 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   onAddToShoppingList() {
-    this.recipeService.addIngredientsToShoppingList(this.recipeDetailInput.ingModel);
+    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
   }
 
 }
