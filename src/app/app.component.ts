@@ -1,19 +1,15 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {AccountService} from './service/account.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [AccountService]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  accounts: {name: string, status: string}[] = [];
+  constructor() {}
 
-  constructor(private accountService: AccountService) {}
-
-  ngOnInit() {
-    this.accounts = this.accountService.accounts;
+  suggestUserName() {
+    const suggestedName = 'Superuser';
   }
 }
