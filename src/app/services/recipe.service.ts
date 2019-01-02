@@ -27,11 +27,11 @@ export class RecipeService {
 
   constructor(private shoppingListService: ShoppingListService) { }
 
-  // getRecipes() {
-  //   return this.recipeList.slice();
-  // }
+  getRecipes() {
+    return this.recipeList.slice();
+  }
 
-  getRecipes(id: number) {
+  getRecipe(id: number) {
     return this.recipeList[id];
   }
 
