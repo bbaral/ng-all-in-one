@@ -6,7 +6,7 @@ import {IngredientModel} from '../models/ingredient.model';
 @Injectable()
 export class RecipeService {
 
-  @Output() recipeSelected = new EventEmitter<RecipeModel>();
+  //@Output() recipeSelected = new EventEmitter<RecipeModel>();
 
   private recipeList: RecipeModel[] = [
     new RecipeModel('Chicken Alfredo',
