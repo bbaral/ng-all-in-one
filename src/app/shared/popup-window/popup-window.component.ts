@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ModalDismissReasons, NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Component, OnInit, TemplateRef} from '@angular/core';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-popup-window',
@@ -7,13 +7,14 @@ import {ModalDismissReasons, NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bo
   styleUrls: ['./popup-window.component.scss']
 })
 export class PopupWindowComponent {
-  constructor(private modalService: NgbModal) { }
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      console.log(result);
-    }, (reason) => {
-      console.log(reason);
-    });
+  modalRef: BsModalRef;
+  constructor(private modalService: BsModalService) { }
+
+  openModalWithClass(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(
+      template,
+      Object.assign({}, { class: 'gray modal-lg' })
+    );
   }
 }
