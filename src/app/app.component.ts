@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {PopupWindowComponent} from './shared/popup-window/popup-window.component';
+import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +9,16 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  @ViewChild('f', {read: NgForm}) f: NgForm;
+  @ViewChild('popupWindow', {read: PopupWindowComponent}) popupWindow: PopupWindowComponent;
 
-  constructor() {}
+  constructor(private modalService: NgbModal) {}
 
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form);
+ onSubmit(): void {
+    console.log(this.f);
   }
 }
