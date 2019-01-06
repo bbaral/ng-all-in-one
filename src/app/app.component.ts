@@ -8,6 +8,11 @@ import {FormGroup, NgForm} from '@angular/forms';
 })
 export class AppComponent {
   @ViewChild('f', {read: NgForm}) f: NgForm;
+  defaultQuestion: string = 'teacher';
+  defaultUsername: string = 'bbaral';
+  defaultEmail: string = 'test@test.com';
+  answer: string = '';
+  genders: any = ['Male', 'Female'];
 
   constructor() {}
 
