@@ -26,19 +26,6 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
-    //Another way of setValue in form in through patch.
-    //which is available only in form
-    /**this.f.setValue({
-      userData: {
-        username: suggestedName,
-        email: ''
-      },
-      secret: 'pet',
-      questionAnswer: 'Pre populating via SuggestedUserName Button',
-      gender: 'Male'
-    });
-     */
-
     this.signUpForm.form.patchValue({
       userData: {
         username: suggestedName
