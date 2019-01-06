@@ -18,6 +18,15 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    this.f.setValue({
+      userData: {
+        username: suggestedName,
+        email: ''
+      },
+      secret: 'pet',
+      questionAnswer: 'Pre populating via SuggestedUserName Button',
+      gender: 'Male'
+    });
   }
 
   onSubmit(): void {
