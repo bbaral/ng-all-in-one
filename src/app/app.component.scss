@@ -1,7 +1,8 @@
 .container {
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
-form .form-group input.ng-touched.ng-invalid {
-  border: 1px solid red;
+.container > * {
+  width: auto;
 }
