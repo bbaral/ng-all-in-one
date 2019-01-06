@@ -51,12 +51,41 @@
                     rows="3"
                     [(ngModel)]="answer"></textarea>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-body">{{answer}}</div>
-        </div>
         <button class="btn btn-primary"
                 type="submit"
                 [disabled]="!f.valid">Submit</button>
+        <br>
+        <hr>
+        <table class="table table-bordered" *ngIf="submitted">
+          <thead>
+          <tr>
+            <th>Label</th>
+            <th>Values</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>UserName:</td>
+            <td>{{user.username}}</td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>{{user.email}}</td>
+          </tr>
+          <tr>
+            <td>Secret Question:</td>
+            <td>{{user.secretQuestion}}</td>
+          </tr>
+          <tr>
+            <td>Answer:</td>
+            <td>{{user.answer}}</td>
+          </tr>
+          <tr>
+            <td>Gender:</td>
+            <td>{{user.gender}}</td>
+          </tr>
+          </tbody>
+        </table>
       </form>
     </div>
   </div>
