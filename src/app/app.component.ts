@@ -1,47 +1,26 @@
-import {Component, TemplateRef, ViewChild} from '@angular/core';
-import {FormGroup, NgForm} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  @ViewChild('f', {read: NgForm}) signUpForm: NgForm;
-  defaultQuestion: string = 'teacher';
-  defaultUsername: string = 'bbaral';
-  defaultEmail: string = 'test@test.com';
-  answer: string = '';
-  genders: any = ['Male', 'Female'];
-  user = {
-    username: '',
-    email: '',
-    secretQuestion: '',
-    answer: '',
-    gender: ''
-  };
-  submitted: boolean = false;
+export class AppComponent implements OnInit {
+  genders = ['Male', 'Female'];
+  signUpForm: FormGroup;
 
-  constructor() {}
-
-  suggestUserName() {
-    const suggestedName = 'Superuser';
-    this.signUpForm.form.patchValue({
-      userData: {
-        username: suggestedName
-      }
+  ngOnInit(): void {
+    this.signUpForm = new FormGroup({
+      'username': new FormControl(null, Validators.required),
+      'email': new FormControl(null,
+        [Validators.required, Validators.email]),
+      'gender': new FormControl('Male', Validators.required)
     });
   }
 
-  onSubmit(): void {
-    this.submitted = true;
+  onSubmit() {
     console.log(this.signUpForm);
-    this.user.username = this.signUpForm.value.userData.username;
-    this.user.email = this.signUpForm.value.userData.email;
-    this.user.secretQuestion = this.signUpForm.value.secret;
-    this.user.answer = this.signUpForm.value.questionAnswer;
-    this.user.gender = this.signUpForm.value.gender;
-
-    this.signUpForm.reset();
   }
+
 }
