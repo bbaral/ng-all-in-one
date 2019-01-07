@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, TemplateRef, ViewChild, ViewRef} from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 
@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   genders = ['Male', 'Female'];
   signUpForm: FormGroup;
   forbiddenUsername = ['mia', 'jim'];
+  @ViewChild('email', {read: TemplateRef}) email: TemplateRef<any>;
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
@@ -21,6 +22,10 @@ export class AppComponent implements OnInit {
       }),
       'gender': new FormControl('Male', Validators.required),
       'hobbies': new FormArray([])
+    });
+    this.signUpForm.valueChanges.subscribe((value) => {
+      this.email = value;
+      console.log(this.email);
     });
   }
 
