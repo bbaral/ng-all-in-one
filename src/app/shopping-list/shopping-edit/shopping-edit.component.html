@@ -25,11 +25,11 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success"
+          <button class="btn btn-success" style="margin-right: 10px;"
                   type="submit"
                   [disabled]="!shoppingForm.valid">{{editMode ? 'Update' : 'Add'}}
           </button>
-          <button class="btn btn-danger"
+          <button class="btn btn-danger" style="margin-right: 10px;"
                   type="button" *ngIf="editMode"
                   (click)="onDelete()">Delete</button>
           <button
