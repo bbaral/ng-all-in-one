@@ -14,7 +14,7 @@ export class RecipeService {
       'https://hips.hearstapps.com/delish/assets/17/24/1497458683-delish-one-pot-chicken-alfredo-1-1024.jpg',
       [
         new IngredientModel('Meat', 1),
-        new IngredientModel('Meat', 20)
+        new IngredientModel('French Fries', 20)
       ]),
     new RecipeModel('Chicken Curry',
       'Chicken Curry',
@@ -31,8 +31,8 @@ export class RecipeService {
     return this.recipeList.slice();
   }
 
-  getRecipe(id: number) {
-    return this.recipeList[id];
+  getRecipe(index: number) {
+    return this.recipeList[index];
   }
 
   addIngredientsToShoppingList(ingredients: IngredientModel[]) {

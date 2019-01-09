@@ -7,7 +7,6 @@ import {ShoppingListService} from '../../services/shopping-list.service';
 import {IngredientModel} from '../../models/ingredient.model';
 import {NgForm} from '@angular/forms';
 import {Subscription} from 'rxjs';
-import index from '@angular/cli/lib/cli';
 
 @Component({
   selector: 'app-shopping-edit',
