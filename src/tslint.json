@@ -13,10 +13,12 @@
             "app",
             "kebab-case"
         ],
+      "whitespace": false,
       "no-trailing-whitespace": false,
       "no-inferrable-types": false,
       "max-line-length": false,
       "quotemark": false,
-      "comment-format": false
+      "comment-format": false,
+      "prefer-const": false
     }
 }
