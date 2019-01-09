@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {RecipeService} from '../../services/recipe.service';
 import {RecipeModel} from '../../models/recipe.model';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -18,6 +18,9 @@ export class RecipeListComponent implements OnInit {
   }
 
   ngOnInit() {
+   this.recipeService.recipesChanged.subscribe((rm: RecipeModel[]) => {
+      this.recipes = rm;
+    });
     this.recipes = this.recipeService.getRecipes();
   }
 
