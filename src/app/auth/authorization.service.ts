@@ -4,7 +4,7 @@ import {EncryptionService} from '../shared/encryption.service';
 
 @Injectable()
 export class AuthorizationService {
-
+  token: string;
   userInfo: {
     firstName: '',
     lastName: '',
@@ -25,10 +25,21 @@ export class AuthorizationService {
 
   signInUser(email: string, password: string) {
     this.ngFireAuth.auth.signInWithEmailAndPassword(email, password)
-      .then((data) => {
-          console.log(data);
+      .then((response) => {
+          this.ngFireAuth.auth.currentUser.getIdToken()
+            .then((tokenReceived: string) => {
+            this.token = tokenReceived;
+          });
       }).catch((error) => {
         console.log(error);
     });
+  }
+
+  getToken() {
+    return this.ngFireAuth.auth.currentUser.getIdToken()
+      .then((tokenReceived: string) => {
+      this.token = tokenReceived;
+    });
+    return this.token;
   }
 }
