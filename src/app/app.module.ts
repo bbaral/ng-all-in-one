@@ -8,21 +8,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import {RecipesComponent, RecipeListComponent, RecipeDetailComponent,
   RecipeEditComponent, RecipeStartComponent, RecipeItemComponent} from './recipes';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { ShoppingListComponent, ShoppingEditComponent } from './shopping-list';
+import {ShoppingListService, RecipeService, AuthGuardService, HttpService, EncryptionService, AuthorizationService} from './services';
 import { DropdownDirective } from './shared/dropdown.directive';
-import {ShoppingListService} from './services/shopping-list.service';
-import {RecipeService} from './services/recipe.service';
 import {AppRoutingModule} from './app-routing.module';
 import {environment} from '../environments/environment';
-import {HttpService} from './shared/http.service';
-import {EncryptionService} from './shared/encryption.service';
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
-import {AuthorizationService} from './auth/authorization.service';
+import { SignupComponent, SigninComponent } from './auth';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AuthGuardService} from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [

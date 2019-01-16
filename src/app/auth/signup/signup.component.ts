@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {EncryptionService} from '../../shared/encryption.service';
-import {AuthorizationService} from '../authorization.service';
+import {EncryptionService, AuthorizationService} from '../../services';
 
 @Component({
   selector: 'app-signup',

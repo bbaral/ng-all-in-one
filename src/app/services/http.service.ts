@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {RecipeService} from '../services/recipe.service';
+import {RecipeService} from './recipe.service';
 import {RecipeModel} from '../models/recipe.model';
 import {map} from 'rxjs/operators';
-import {AuthorizationService} from '../auth/authorization.service';
+import {AuthorizationService} from './authorization.service';
 
 @Injectable()
 export class HttpService {

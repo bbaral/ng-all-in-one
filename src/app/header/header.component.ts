@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {HttpService} from '../shared/http.service';
-import {AuthorizationService} from '../auth/authorization.service';
+import {HttpService, AuthorizationService} from '../services';
 
 @Component({
   selector: 'app-header',
