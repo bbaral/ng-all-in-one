@@ -7,14 +7,11 @@ import { AgGridModule } from 'ag-grid-angular';
 import {HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MaterialModule} from './material.module';
-import { ShortenPipe } from './shorten.pipe';
-import {SearchFilterPipe} from './search-filter.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShortenPipe,
-    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
