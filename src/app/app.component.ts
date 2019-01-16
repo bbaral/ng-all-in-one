@@ -10,12 +10,12 @@ import {error} from '@angular/compiler/src/util';
 export class AppComponent {
   servers = [
     {
-      name: 'Testserver',
+      name: 'Bikram',
       capacity: 10,
       id: this.generateId()
     },
     {
-      name: 'Liveserver',
+      name: 'Baral',
       capacity: 100,
       id: this.generateId()
     }
@@ -32,6 +32,13 @@ export class AppComponent {
 
   onSave() {
     this.serverService.storeServers(this.servers)
+      .subscribe((response) => {
+        console.log(response);
+        console.log(error);
+      });
+  }
+  onGet() {
+    this.serverService.getServers()
       .subscribe((response) => {
         console.log(response);
         console.log(error);
