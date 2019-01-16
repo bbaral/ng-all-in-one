@@ -9,6 +9,12 @@ import {FormGroup, NgForm} from '@angular/forms';
 export class AppComponent {
   filteredStatus: string = '';
 
+  appStatus = new Promise((resolve, reject) => {
+   setTimeout(() => {
+     resolve('stable');
+   }, 0);
+  });
+
   servers = [
     {
       instanceType: 'medium',
