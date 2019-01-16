@@ -21,6 +21,8 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {HttpService} from './shared/http.service';
 import {EncryptionService} from './shared/encryption.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {EncryptionService} from './shared/encryption.service';
     RecipeStartComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
