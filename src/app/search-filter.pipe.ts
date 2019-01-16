@@ -1,21 +1,21 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'searchFilter'
 })
-export class FilterPipe implements PipeTransform {
+export class SearchFilterPipe implements PipeTransform {
 
   transform(value: any, filterString?: any, propName?: any): any {
-    if (value.length === 0) {
+    const resultArray = [];
+    if (value.length === 0 || filterString === '') {
       return value;
     } else {
       for (const item of value) {
-        const resultArray = [];
         if (item[propName] === filterString) {
           resultArray.push(item);
         }
-        return resultArray;
       }
+      return resultArray;
     }
   }
 
