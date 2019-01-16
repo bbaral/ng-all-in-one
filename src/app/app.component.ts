@@ -9,6 +9,7 @@ import {HttpResponse} from '@angular/common/http';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  appName = this.serverService.getAppName();
   servers = [
     {
       name: 'Bikram',

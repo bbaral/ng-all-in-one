@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {ErrorObserver, Observable, throwError} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
+import {error} from '@angular/compiler/src/util';
 
 @Injectable()
 export class ServerService {
@@ -31,6 +32,16 @@ export class ServerService {
           server.name = 'FETCHED_' + server.name;
         }
         return data;
+      })).pipe(catchError((err) => {
+        console.log(err);
+        return throwError(err);
+    }));
+  }
+
+  getAppName() {
+    return this.http.get('https://http-request-demo.firebaseio.com/appName.json').pipe(
+      map((response) => {
+        return response;
       }));
   }
 }
