@@ -28,5 +28,15 @@ export class EncryptionService {
     }
   }
 
+  encryptData(input?: any) {
+   const encrypt =  CryptoJS.AES.encrypt(input.trim(), '').toString();
+   return encrypt;
+  }
+
+  decryptData(input?: any) {
+   const decrypt = CryptoJS.AES.decrypt(input.trim(), '').toString(CryptoJS.enc.Utf8);
+   return decrypt;
+  }
+
 
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {EncryptionService} from '../../shared/encryption.service';
+import {AuthorizationService} from '../authorization.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,16 +9,19 @@ import {EncryptionService} from '../../shared/encryption.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  @ViewChild('signupForm', {read: NgForm}) signUpForm: NgForm;
+  @ViewChild('signUpForm', {read: NgForm}) signUpForm: NgForm;
 
-  constructor(private encryption: EncryptionService) { }
+  constructor(private authService: AuthorizationService,
+              private encryption: EncryptionService) { }
 
   ngOnInit() {
   }
 
-  onSignUp(form: NgForm) {
-    const email = form.value.email;
-    const password = form.value.password;
+  onSignUp() {
+    const email = this.signUpForm.value.email;
+    const password = this.signUpForm.value.password;
+    console.log(password);
+    this.authService.signUpUser(email, password);
   }
 
 }

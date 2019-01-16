@@ -20,6 +20,8 @@ import {EncryptionService} from './shared/encryption.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import {AuthorizationService} from './auth/authorization.service';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {AuthorizationService} from './auth/authorization.service';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [ShoppingListService,
     RecipeService,
