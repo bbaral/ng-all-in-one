@@ -14,13 +14,19 @@ export class AppComponent {
       instanceType: 'medium',
       name: 'Production Server',
       status: 'stable',
-      started: new Date(15, 1, 2017)
+      started: new Date(10, 0, 2017)
     },
     {
       instanceType: 'large',
       name: 'User',
       status: 'stable',
       started: new Date(15, 1, 2017)
+    },
+    {
+      instanceType: 'large',
+      name: 'DB Admin',
+      status: 'critical',
+      started: new Date(15, 1, 2010)
     },
     {
       instanceType: 'small',
@@ -33,7 +39,19 @@ export class AppComponent {
       name: 'Testing Environment Server',
       status: 'stable',
       started: new Date(15, 1, 2017)
-    }
+    },
+    {
+      instanceType: 'Severe',
+      name: 'System Analyst',
+      status: 'critical',
+      started: new Date(19, 12, 1995)
+    },
+    {
+      instanceType: 'Large',
+      name: 'DevOps Engineer',
+      status: 'critical',
+      started: new Date(30, 5, 2010)
+    },
   ];
 
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
