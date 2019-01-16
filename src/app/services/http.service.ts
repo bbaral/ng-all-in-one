@@ -24,7 +24,7 @@ export class HttpService {
     this.authService.getToken();
     return this.http.get('https://ng-recipe-book-60bd6.firebaseio.com/recipes.json')
       .pipe(map((response) => {
-        const recipes: RecipeModel[] = response;
+        const recipes: any = response;
         for (let recipe of recipes) {
           if (!recipes['ingredients']) {
             console.log(recipe);

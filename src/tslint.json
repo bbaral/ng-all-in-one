@@ -20,6 +20,7 @@
       "quotemark": false,
       "comment-format": false,
       "prefer-const": false,
-      "one-line": false
+      "one-line": false,
+      "eofline": false
     }
 }

@@ -6,8 +6,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import {RecipesComponent, RecipeListComponent, RecipeDetailComponent,
-  RecipeEditComponent, RecipeStartComponent, RecipeItemComponent} from './recipes';
 import { ShoppingListComponent, ShoppingEditComponent } from './shopping-list';
 import {ShoppingListService, RecipeService, AuthGuardService, HttpService, EncryptionService, AuthorizationService} from './services';
 import { DropdownDirective } from './shared/dropdown.directive';
@@ -16,17 +14,13 @@ import {environment} from '../environments/environment';
 import { SignupComponent, SigninComponent } from './auth';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {RecipesModule} from './recipes/recipes.module';
+import {RecipesRoutingModule} from './recipes/recipes-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    RecipeEditComponent,
-    RecipeStartComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
@@ -38,10 +32,12 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
+    RecipesModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AppRoutingModule,
+    RecipesRoutingModule
   ],
   providers: [ShoppingListService,
     RecipeService,
