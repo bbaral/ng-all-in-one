@@ -7,6 +7,6 @@ export class ServerService {
   constructor(private http: HttpClient) { }
 
   storeServers(servers: any[]): Observable<any> {
-    return this.http.post('https://http-request-demo.firebaseio.com/', servers);
+    return this.http.post('https://http-request-demo.firebaseio.com/data.json', servers);
   }
 }
