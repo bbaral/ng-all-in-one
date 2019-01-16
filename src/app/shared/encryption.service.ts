@@ -6,7 +6,7 @@ export class EncryptionService {
   encryptMode: boolean;
   textToConvert: string;
   password: string;
-  conversionOutput: string;
+  conversionOutput: any;
 
   constructor() {
     this.encryptMode = true;

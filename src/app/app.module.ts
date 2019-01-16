@@ -20,6 +20,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {HttpService} from './shared/http.service';
+import {EncryptionService} from './shared/encryption.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,10 @@ import {HttpService} from './shared/http.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [ShoppingListService, RecipeService, HttpService],
+  providers: [ShoppingListService,
+    RecipeService,
+    HttpService,
+    EncryptionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
