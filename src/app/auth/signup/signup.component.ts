@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {EncryptionService} from '../../shared/encryption.service';
 
@@ -8,6 +8,7 @@ import {EncryptionService} from '../../shared/encryption.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  @ViewChild('signupForm', {read: NgForm}) signUpForm: NgForm;
 
   constructor(private encryption: EncryptionService) { }
 

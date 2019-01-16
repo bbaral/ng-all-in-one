@@ -1,12 +1,20 @@
 <div class="row">
   <div class="col-xs-12 col-sm-10 col-md-8">
-    <form (ngSubmit)="onSignUp(signupForm)" #signupForm="ngForm">
+    <form (ngSubmit)="onSignUp()" #signupForm="ngForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" id="firstName" ngModel placeholder="Enter your First Name">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" name="lastName" id="lastName" ngModel placeholder="Enter your Last Name">
+      </div>
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" name="email" id="email" ngModel placeholder="Enter your email id!">
       </div>
       <div class="form-group">
-        <label for="password">Email</label>
+        <label for="password">Password</label>
         <input type="password" class="form-control" name="password" id="password" ngModel
                placeholder="Enter your password">
       </div>
