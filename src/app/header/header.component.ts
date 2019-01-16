@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpService} from '../shared/http.service';
+import {AuthorizationService} from '../auth/authorization.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,8 @@ import {HttpService} from '../shared/http.service';
 })
 export class HeaderComponent {
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService,
+              private authService: AuthorizationService) {}
 
   onSaveData() {
     this.httpService.storeRecipes().subscribe((response) => {
@@ -18,5 +20,9 @@ export class HeaderComponent {
   onFetchData() {
    const fetchData =  this.httpService.fetchRecipes();
    console.log(fetchData);
+  }
+
+  LogOut() {
+    this.authService.logout();
   }
 }

@@ -15,14 +15,14 @@ export class HttpService {
 
   storeRecipes() {
     const httpToken = this.authService.getToken();
-    return this.http.put('https://ng-recipe-book-60bd6.firebaseio.com/recipes.json?auth=' + httpToken,
+    return this.http.put('https://ng-recipe-book-60bd6.firebaseio.com/recipes.json',
       this.recipeService.getRecipes());
   }
 
   fetchRecipes() {
     const httpToken = this.authService.getToken();
     this.authService.getToken();
-    return this.http.get('https://ng-recipe-book-60bd6.firebaseio.com/recipes.json?auth=' + httpToken)
+    return this.http.get('https://ng-recipe-book-60bd6.firebaseio.com/recipes.json')
       .pipe(map((response) => {
         const recipes: RecipeModel[] = response;
         for (let recipe of recipes) {

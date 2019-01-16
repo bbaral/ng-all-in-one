@@ -22,6 +22,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import {AuthorizationService} from './auth/authorization.service';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AuthGuardService} from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     RecipeService,
     HttpService,
     AuthorizationService,
+    AuthGuardService,
     EncryptionService],
   bootstrap: [AppComponent]
 })
