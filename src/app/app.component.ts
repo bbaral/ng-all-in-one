@@ -7,6 +7,7 @@ import {FormGroup, NgForm} from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  filteredStatus: string = '';
   servers = [
     {
       instanceType: 'medium',
