@@ -1,4 +1,4 @@
-import {EventEmitter, Injectable, Output} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {RecipeModel} from '../models/recipe.model';
 import {ShoppingListService} from './shopping-list.service';
 import {IngredientModel} from '../models/ingredient.model';
@@ -33,6 +33,11 @@ export class RecipeService {
 
   getRecipe(index: number) {
     return this.recipeList[index];
+  }
+
+  setRecipes(recipes: RecipeModel[]) {
+    this.recipeList = recipes;
+    this.recipesChanged.next(this.recipeList.slice());
   }
 
   addIngredientsToShoppingList(ingredients: IngredientModel[]) {

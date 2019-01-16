@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HttpService} from '../shared/http.service';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private httpService: HttpService) {}
+
+  onSaveData() {
+    this.httpService.storeRecipes().subscribe((response) => {
+      console.log(response);
+    });
+  }
+
+  onFetchData() {
+   const fetchData =  this.httpService.fetchRecipes();
+   console.log(fetchData);
+  }
 }

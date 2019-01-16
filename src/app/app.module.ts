@@ -17,6 +17,9 @@ import {RecipeService} from './services/recipe.service';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
 import {AppRoutingModule} from './app-routing.module';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {HttpService} from './shared/http.service';
 
 @NgModule({
   declarations: [
@@ -37,9 +40,10 @@ import {AppRoutingModule} from './app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [ShoppingListService, RecipeService],
+  providers: [ShoppingListService, RecipeService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
