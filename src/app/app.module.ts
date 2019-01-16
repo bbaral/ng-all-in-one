@@ -7,6 +7,9 @@ import { AgGridModule } from 'ag-grid-angular';
 import {HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MaterialModule} from './material.module';
+import {ServerService} from './services/server.service';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
 
 
 @NgModule({
@@ -20,10 +23,11 @@ import {MaterialModule} from './material.module';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    AngularFireModule.initializeApp(environment),
     AgGridModule.withComponents([]),
     MaterialModule
   ],
-  providers: [],
+  providers: [ServerService],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
