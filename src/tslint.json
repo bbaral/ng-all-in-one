@@ -19,6 +19,7 @@
       "max-line-length": false,
       "quotemark": false,
       "comment-format": false,
-      "prefer-const": false
+      "prefer-const": false,
+      "one-line": false
     }
 }
