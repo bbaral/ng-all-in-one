@@ -3,7 +3,8 @@ import {CommonModule} from '@angular/common';
 import {RecipesComponent, RecipeListComponent, RecipeDetailComponent,
   RecipeEditComponent, RecipeStartComponent, RecipeItemComponent} from './index';
 import {RecipesRoutingModule} from './recipes-routing.module';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RecipesRoutingModule
+    RecipesRoutingModule,
+    SharedModule
   ],
   providers: []
 })
