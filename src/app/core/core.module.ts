@@ -9,6 +9,8 @@ import {
   HttpService,
   RecipeService,
   ShoppingListService} from '../services';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {AuthInterceptor} from '../services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {
     RecipeService,
     HttpService,
     AuthorizationService,
-    EncryptionService
+    EncryptionService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ]
 })
 export class CoreModule {}

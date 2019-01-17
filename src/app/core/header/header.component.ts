@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {HttpService, AuthorizationService} from '../../services';
+import {Component} from '@angular/core';
+import {HttpEvent} from '@angular/common/http';
+import {AuthorizationService, HttpService} from '../../services';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent {
               private authService: AuthorizationService) {}
 
   onSaveData() {
-    this.httpService.storeRecipes().subscribe((response) => {
+    this.httpService.storeRecipes().subscribe((response: HttpEvent<Object>) => {
       console.log(response);
     });
   }
