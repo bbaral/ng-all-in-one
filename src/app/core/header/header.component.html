@@ -15,7 +15,7 @@
           <li><a routerLink="/signin">Log In</a></li>
         </ng-template>
         <li><a style="cursor: pointer;"
-               (click)="LogOut()" *ngIf="authService.isAuthenticated()">Log out</a></li>
+               (click)="LogOut()" *ngIf="isAuthenticated()">Log out</a></li>
         <li class="dropdown" appDropdown *ngIf="authService.isAuthenticated()">
           <a class="dropdown-toggle" role="button" style="cursor: pointer;">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">

@@ -21,6 +21,10 @@ export class HeaderComponent {
    console.log(fetchData);
   }
 
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
+  }
+
   LogOut() {
     this.authService.logout();
   }
