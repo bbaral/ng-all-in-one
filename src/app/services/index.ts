@@ -4,3 +4,5 @@ export * from './encryption.service';
 export * from './http.service';
 export * from './recipe.service';
 export * from './shopping-list.service';
+export * from './auth.interceptor';
+export * from './logging.interceptor';
