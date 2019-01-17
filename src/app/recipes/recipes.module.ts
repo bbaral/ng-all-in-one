@@ -5,6 +5,7 @@ import {RecipesComponent, RecipeListComponent, RecipeDetailComponent,
 import {RecipesRoutingModule} from './recipes-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
+import {AuthGuardService} from '../services';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,6 @@ import {SharedModule} from '../shared/shared.module';
     SharedModule,
     RecipesRoutingModule
   ],
-  providers: []
+  providers: [AuthGuardService]
 })
 export class RecipesModule {}

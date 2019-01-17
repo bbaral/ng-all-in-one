@@ -4,7 +4,6 @@ import {AngularFireModule} from '@angular/fire';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import {ShoppingListService, RecipeService, AuthGuardService, HttpService, EncryptionService, AuthorizationService} from './services';
 import {AppRoutingModule} from './app-routing.module';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
@@ -30,12 +29,7 @@ import {CoreModule} from './core/core.module';
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [ShoppingListService,
-    RecipeService,
-    HttpService,
-    AuthorizationService,
-    AuthGuardService,
-    EncryptionService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
