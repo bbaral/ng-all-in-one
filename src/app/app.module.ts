@@ -4,7 +4,6 @@ import {AngularFireModule} from '@angular/fire';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import {ShoppingListService, RecipeService, AuthGuardService, HttpService, EncryptionService, AuthorizationService} from './services';
 import {AppRoutingModule} from './app-routing.module';
 import {environment} from '../environments/environment';
@@ -13,13 +12,11 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {SharedModule} from './shared/shared.module';
 import {ShoppingListModule} from './shopping-list/shopping-list.module';
 import {AuthModule} from './auth/auth.module';
-import { HomeComponent } from './home/home.component';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +25,7 @@ import { HomeComponent } from './home/home.component';
     AuthModule,
     SharedModule,
     ShoppingListModule,
+    CoreModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
