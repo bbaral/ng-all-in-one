@@ -9,7 +9,6 @@ export const START_EDIT = 'EDIT_INGREDIENT';
 
 export class AddIngredient implements Action {
   readonly type = ADD_INGREDIENT;
-  // payload: IngredientModel;
   constructor(public payload: IngredientModel) {}
 }
 
@@ -20,12 +19,11 @@ export class AddIngredients implements Action {
 
 export class UpdateIngredient implements Action {
   readonly type = UPDATE_INGREDIENT;
-  constructor(public payload: {index: number, ingredient: IngredientModel}) {}
+  constructor(public payload: {ingredient: IngredientModel}) {}
 }
 
 export class DeleteIngredient implements Action {
   readonly type = DELETE_INGREDIENT;
-  constructor(public payload: number) {}
 }
 
 export class StartEdit implements Action {

@@ -7,8 +7,7 @@ import {
   AuthorizationService,
   EncryptionService,
   HttpService,
-  RecipeService,
-  ShoppingListService} from '../services';
+  RecipeService} from '../services';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthInterceptor, LoggingInterceptor} from '../services';
 
@@ -26,7 +25,6 @@ import {AuthInterceptor, LoggingInterceptor} from '../services';
     HeaderComponent
   ],
   providers: [
-    ShoppingListService,
     RecipeService,
     HttpService,
     AuthorizationService,
