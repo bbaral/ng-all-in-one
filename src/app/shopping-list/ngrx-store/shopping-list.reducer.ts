@@ -1,11 +1,23 @@
 import * as ShoppingListAction from './shopping-list.action';
 import {IngredientModel} from '../../models/ingredient.model';
 
-const initialState = {
+export interface AppState {
+  shoppingList: State;
+}
+
+export interface State {
+  ingredients: IngredientModel[];
+  editedIngredient: IngredientModel;
+  editedIngredientIndex: number;
+}
+
+const initialState: State = {
   ingredients: [
     new IngredientModel('Apple', 10 ),
     new IngredientModel('Tomato', 15 )
-  ]
+  ],
+  editedIngredient: null,
+  editedIngredientIndex: -1
 };
 export function shoppingListReducer(state = initialState, action: ShoppingListAction.ShoppingListAction) {
   switch (action.type) {
@@ -29,6 +41,13 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
       return {
         ...state,
         ingredients: oldIngredients
+      };
+    case ShoppingListAction.DELETE_INGREDIENT:
+      const deleteIngredients = [...state.ingredients];
+      deleteIngredients.splice(action.payload, 1);
+      return {
+        ...state,
+        ingredients: deleteIngredients
       };
     default:
       return state;
