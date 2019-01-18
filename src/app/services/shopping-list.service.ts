@@ -13,17 +13,8 @@ export class ShoppingListService {
 
   constructor() { }
 
-  getIngredients() {
-    return this.ingredientList.slice();
-  }
-
   getIngredient(index: number) {
     return this.ingredientList[index];
-  }
-
-  addIngredient(ingredient: IngredientModel) {
-    this.ingredientList.push(ingredient);
-    this.ingredientsChanged.next(this.ingredientList.slice());
   }
 
   addIngredients(ingredients: IngredientModel[]) {
