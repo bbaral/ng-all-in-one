@@ -14,6 +14,8 @@ import {AuthModule} from './auth/auth.module';
 import {CoreModule} from './core/core.module';
 import {StoreModule} from '@ngrx/store';
 import {AppReducers} from './ngrx-global-store/app.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {AuthEffects} from './auth/ngrx-auth-store/auth.effects';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import {AppReducers} from './ngrx-global-store/app.reducer';
     ShoppingListModule,
     CoreModule,
     StoreModule.forRoot(AppReducers),
+    EffectsModule.forRoot([AuthEffects]),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
