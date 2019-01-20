@@ -3,8 +3,8 @@ import {RecipeService} from '../../services';
 import {RecipeModel} from '../../models/recipe.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Store} from '@ngrx/store';
-import * as ShoppingListActions from '../../shopping-list/ngrx-store/shopping-list.action';
-import * as fromShoppingListReducer from '../../shopping-list/ngrx-store/shopping-list.reducer';
+import * as ShoppingListActions from '../../shopping-list/ngrx-shoppinglist-store/shopping-list.action';
+import * as fromShoppingListReducer from '../../shopping-list/ngrx-shoppinglist-store/shopping-list.reducer';
 
 
 @Component({

@@ -6,8 +6,8 @@ import {
 import {IngredientModel} from '../../models/ingredient.model';
 import {NgForm} from '@angular/forms';
 import {Store} from '@ngrx/store';
-import * as shoppingListActions from '../ngrx-store/shopping-list.action';
-import * as fromShoppingListReducer from '../ngrx-store/shopping-list.reducer';
+import * as shoppingListActions from '../ngrx-shoppinglist-store/shopping-list.action';
+import * as fromShoppingListReducer from '../ngrx-shoppinglist-store/shopping-list.reducer';
 import {Subscription} from 'rxjs';
 
 @Component({
