@@ -5,7 +5,6 @@ import {SharedModule} from '../shared/shared.module';
 import {AppRoutingModule} from '../app-routing.module';
 import {
   AuthorizationService,
-  EncryptionService,
   HttpService,
   RecipeService} from '../services';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
@@ -28,7 +27,6 @@ import {AuthInterceptor, LoggingInterceptor} from '../services';
     RecipeService,
     HttpService,
     AuthorizationService,
-    EncryptionService,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true}
   ]

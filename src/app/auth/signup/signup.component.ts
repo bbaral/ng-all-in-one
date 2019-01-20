@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {EncryptionService, AuthorizationService} from '../../services';
+import {AuthorizationService} from '../../services';
 
 @Component({
   selector: 'app-signup',
@@ -10,8 +10,7 @@ import {EncryptionService, AuthorizationService} from '../../services';
 export class SignupComponent implements OnInit {
   @ViewChild('signUpForm', {read: NgForm}) signUpForm: NgForm;
 
-  constructor(private authService: AuthorizationService,
-              private encryption: EncryptionService) { }
+  constructor(private authService: AuthorizationService) { }
 
   ngOnInit() {
   }

@@ -13,7 +13,7 @@ import {ShoppingListModule} from './shopping-list/shopping-list.module';
 import {AuthModule} from './auth/auth.module';
 import {CoreModule} from './core/core.module';
 import {StoreModule} from '@ngrx/store';
-import {shoppingListReducer} from './shopping-list/ngrx-shoppinglist-store/shopping-list.reducer';
+import {AppReducers} from './ngrx-global-store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import {shoppingListReducer} from './shopping-list/ngrx-shoppinglist-store/shopp
     SharedModule,
     ShoppingListModule,
     CoreModule,
-    StoreModule.forRoot({shoppingList: shoppingListReducer}),
+    StoreModule.forRoot(AppReducers),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
