@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import * as FromAppReducer from '../ngrx-global-store/app.reducer';
 import * as FromAuthReducer from '../auth/ngrx-auth-store/auth.reducer';
-import {map} from 'rxjs/operators';
+import {map, take} from 'rxjs/operators';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
@@ -15,6 +15,7 @@ export class AuthGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return this.store.select('auth').pipe(
+      take(1),
       map((authState: FromAuthReducer.AuthState) => {
         return authState.authenticated;
       })

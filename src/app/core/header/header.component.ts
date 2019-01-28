@@ -7,6 +7,7 @@ import * as FromAuthReducer from '../../auth/ngrx-auth-store/auth.reducer';
 import {Observable} from 'rxjs';
 import {SigninComponent} from '../../auth';
 import * as FromAuthActions from '../../auth/ngrx-auth-store/auth.action';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,11 +16,12 @@ import * as FromAuthActions from '../../auth/ngrx-auth-store/auth.action';
 export class HeaderComponent implements OnInit {
 
   authState: Observable<FromAuthReducer.AuthState>;
-  @ViewChild('signInComponent', {read: SigninComponent}) signInComponent: SigninComponent;
-  constructor(private httpService: HttpService,
-              private store: Store<FromAppReducer.AppState>) {
 
-  }
+  @ViewChild('signInComponent', {read: SigninComponent}) signInComponent: SigninComponent;
+
+  constructor(private httpService: HttpService,
+              private store: Store<FromAppReducer.AppState>,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.authState = this.store.select('auth');
