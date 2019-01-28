@@ -16,6 +16,8 @@ import {AppReducers} from './ngrx-global-store/app.reducer';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthEffects} from './auth/ngrx-auth-store/auth.effects';
 import * as firebase from 'firebase';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 export const firebaseAPIKEY = {
   apiKey: "AIzaSyAGw-HyN0QYulY8TFTZc2QJoi3hMoDH0d0",
@@ -39,8 +41,10 @@ firebase.initializeApp(firebaseAPIKEY);
     SharedModule,
     ShoppingListModule,
     CoreModule,
+    StoreRouterConnectingModule,
     StoreModule.forRoot(AppReducers),
     EffectsModule.forRoot([AuthEffects]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
