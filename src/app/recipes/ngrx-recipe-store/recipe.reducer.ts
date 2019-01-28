@@ -1,8 +1,9 @@
 import {RecipeModel} from '../../models/recipe.model';
 import {IngredientModel} from '../../models/ingredient.model';
 import * as fromRecipeAction from './recipe.action';
+import * as fromApp from '../../ngrx-global-store/app.reducer';
 
-export interface FeatureState {
+export interface FeatureState extends fromApp.AppState {
   recipeStateArray: RecipeState;
 }
 export interface RecipeState {
