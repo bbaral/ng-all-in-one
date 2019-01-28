@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {AuthorizationService} from '../../services';
+import {Store} from '@ngrx/store';
+import * as FromAppReducer from '../../ngrx-global-store/app.reducer';
+import * as FromAuthActions from '../ngrx-auth-store/auth.action';
 
 @Component({
   selector: 'app-signin',
@@ -9,15 +12,17 @@ import {AuthorizationService} from '../../services';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private authService: AuthorizationService) { }
+  @ViewChild('signIn', {read: NgForm}) signIn: NgForm;
+  // constructor(private authService: AuthorizationService) { } -- no longer need since it is going to hook from from auth.effect.ts
+  constructor(private store: Store<FromAppReducer.AppState>) { }
 
   ngOnInit() {
   }
 
-  onSignIn(form: NgForm) {
-    const email = form.value.email;
-    const password = form.value.password;
-    this.authService.signInUser(email, password);
+  onSignIn() {
+    const email = this.signIn.value.email;
+    const password = this.signIn.value.password;
+    this.store.dispatch(new FromAuthActions.TrySignIn({username: email, password: password}));
     console.log(password);
   }
 

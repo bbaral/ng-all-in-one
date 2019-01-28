@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import * as FromAuthAction from './auth.action';
 import {map, switchMap, mergeMap} from 'rxjs/operators';
@@ -7,7 +8,7 @@ import {fromPromise} from 'rxjs/internal-compatibility';
 
 @Injectable()
 export class AuthEffects {
-
+ //Effect for Sign Up
   @Effect()
   authSignup = this.actions$.pipe(
     ofType(FromAuthAction.TRY_SIGNUP),
@@ -33,5 +34,32 @@ export class AuthEffects {
     })
   );
 
-  constructor(private actions$: Actions) {}
+  //Effect for Sign In
+  @Effect()
+  autSignin = this.actions$.pipe(
+    ofType(FromAuthAction.TRY_SIGNIN),
+    map((action: FromAuthAction.TrySignIn) => {
+      return action.payload;
+    }),
+    switchMap((authData: {username: string, password: string}) => {
+      return fromPromise(firebase.auth().signInWithEmailAndPassword(authData.username, authData.password));
+    }),
+    switchMap(() => {
+      return fromPromise(firebase.auth().currentUser.getIdToken());
+    }),
+    mergeMap((token: string) => {
+      this.router.navigate(['/']);
+      return [
+        {
+          type: FromAuthAction.SIGNIN
+        },
+        {
+          type: FromAuthAction.SET_TOKEN,
+          payload: token
+        }
+      ];
+    })
+  );
+
+  constructor(private actions$: Actions, private router: Router) {}
 }
