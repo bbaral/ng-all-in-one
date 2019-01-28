@@ -4,7 +4,6 @@ import {HomeComponent} from './home/home.component';
 import {SharedModule} from '../shared/shared.module';
 import {AppRoutingModule} from '../app-routing.module';
 import {
-  AuthorizationService,
   HttpService,
   RecipeService} from '../services';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
@@ -26,7 +25,6 @@ import {AuthInterceptor, LoggingInterceptor} from '../services';
   providers: [
     RecipeService,
     HttpService,
-    AuthorizationService,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true}
   ]

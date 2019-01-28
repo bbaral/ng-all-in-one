@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {AuthorizationService} from '../../services';
 import {Store} from '@ngrx/store';
 import * as FromAppReducer from '../../ngrx-global-store/app.reducer';
 import * as FromAuthActions from '../ngrx-auth-store/auth.action';

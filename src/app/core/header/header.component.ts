@@ -1,11 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpEvent} from '@angular/common/http';
-import {AuthorizationService, HttpService} from '../../services';
+import {HttpService} from '../../services';
 import {Store} from '@ngrx/store';
 import * as FromAppReducer from '../../ngrx-global-store/app.reducer';
 import * as FromAuthReducer from '../../auth/ngrx-auth-store/auth.reducer';
 import {Observable} from 'rxjs';
 import {SigninComponent} from '../../auth';
+import * as FromAuthActions from '../../auth/ngrx-auth-store/auth.action';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,6 @@ export class HeaderComponent implements OnInit {
   authState: Observable<FromAuthReducer.AuthState>;
   @ViewChild('signInComponent', {read: SigninComponent}) signInComponent: SigninComponent;
   constructor(private httpService: HttpService,
-              private authService: AuthorizationService,
               private store: Store<FromAppReducer.AppState>) {
 
   }
@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   }
 
   LogOut() {
-    this.authService.logout();
+    this.store.dispatch(new FromAuthActions.LogOut());
   }
 
 }

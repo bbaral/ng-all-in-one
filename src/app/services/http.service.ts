@@ -3,14 +3,12 @@ import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/
 import {RecipeService} from './recipe.service';
 import {RecipeModel} from '../models/recipe.model';
 import {map} from 'rxjs/operators';
-import {AuthorizationService} from './authorization.service';
 
 @Injectable()
 export class HttpService {
 
   constructor(private http: HttpClient,
-              private recipeService: RecipeService,
-              private authService: AuthorizationService) {
+              private recipeService: RecipeService) {
   }
 
   storeRecipes() {
