@@ -46,7 +46,7 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
 
     case ShoppingListAction.DELETE_INGREDIENT:
       const previousIngredients = [...state.ingredients];
-      oldIngredients.splice(state.editedIngredientIndex, 1);
+      previousIngredients.splice(state.editedIngredientIndex, 1);
       return {
         ...state,
         ingredients: previousIngredients,

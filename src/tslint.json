@@ -21,6 +21,7 @@
       "comment-format": false,
       "prefer-const": false,
       "one-line": false,
-      "eofline": false
+      "eofline": false,
+      "class-name": false
     }
 }

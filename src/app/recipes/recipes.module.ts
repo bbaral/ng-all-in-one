@@ -1,11 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {StoreModule} from '@ngrx/store';
 import {RecipesComponent, RecipeListComponent, RecipeDetailComponent,
   RecipeEditComponent, RecipeStartComponent, RecipeItemComponent} from './index';
 import {RecipesRoutingModule} from './recipes-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
 import {AuthGuardService} from '../services';
+import {recipeReducer} from './ngrx-recipe-store/recipe.reducer';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {AuthGuardService} from '../services';
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
-    RecipesRoutingModule
+    RecipesRoutingModule,
+    StoreModule.forFeature('recipes', recipeReducer)
   ],
   providers: [AuthGuardService]
 })
