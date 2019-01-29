@@ -12,12 +12,6 @@ export class HttpService {
   }
 
   storeRecipes() {
-    //const httpToken = this.authService.getToken;
-    // return this.http.put('https://ng-recipe-book-60bd6.firebaseio.com/recipes.json',
-    //   this.recipeService.getRecipes(), {
-    //     observe: 'body',
-    //     params: new HttpParams()
-    //   });
     const request = new HttpRequest('PUT',
       'https://ng-recipe-book-60bd6.firebaseio.com/recipes.json',
       this.recipeService.getRecipes(), {responseType: 'json', reportProgress: true});

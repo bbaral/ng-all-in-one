@@ -7,6 +7,7 @@ import * as FromAuthReducer from '../../auth/ngrx-auth-store/auth.reducer';
 import {Observable} from 'rxjs';
 import {SigninComponent} from '../../auth';
 import * as FromAuthActions from '../../auth/ngrx-auth-store/auth.action';
+import * as FromRecipeActions from '../../recipes/ngrx-recipe-store/recipe.action';
 import {Router} from '@angular/router';
 
 @Component({
@@ -34,8 +35,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onFetchData() {
-   const fetchData =  this.httpService.fetchRecipes();
-   console.log(fetchData);
+   this.store.dispatch(new FromRecipeActions.fetchRecipes());
   }
 
   LogOut() {

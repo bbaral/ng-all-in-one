@@ -8,6 +8,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
 import {AuthGuardService} from '../services';
 import {recipeReducer} from './ngrx-recipe-store/recipe.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {RecipeEffects} from './ngrx-recipe-store/recipe.effects';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {recipeReducer} from './ngrx-recipe-store/recipe.reducer';
     ReactiveFormsModule,
     SharedModule,
     RecipesRoutingModule,
-    StoreModule.forFeature('recipes', recipeReducer)
+    StoreModule.forFeature('recipes', recipeReducer),
+    EffectsModule.forFeature([RecipeEffects])
   ],
   providers: [AuthGuardService]
 })
