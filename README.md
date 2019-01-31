@@ -18,10 +18,6 @@ Content Cell  | Content Cell
 
 All the related images and ingredient are from internet and solely intended to use for practice purpose only.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
@@ -34,6 +30,8 @@ Download the file and run following command. <br />
 `npm run basic:server` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//build the server side code<br />
 `npm run webpack:server` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//compile the server file<br />
 `node dist/server` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//run the server<br />
+<br /><br /><br />
+Navigate to `http://localhost:4000/`. The app will automatically reload if you change any of the source files.
 
 
 
