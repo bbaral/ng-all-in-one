@@ -7,7 +7,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
   animations: [
     trigger('divState', [
       state('normal', style({
-        'background-color': 'red',
+        backgroundColor: 'red',
         transform: 'translateX(0)'
       })),
       state('highlighted', style({
@@ -22,7 +22,14 @@ export class AppComponent {
   state = 'normal';
   list = ['Milk', 'Sugar', 'Bread'];
 
+  onAnimate() {
+    this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
+  }
   onAdd(item) {
     this.list.push(item);
+  }
+
+  onDelete(item) {
+    this.list.splice(this.list.indexOf(item), 1);
   }
 }
