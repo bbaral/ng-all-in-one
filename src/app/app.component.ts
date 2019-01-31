@@ -24,7 +24,9 @@ import {trigger,
       state('highlighted', style({
         backgroundColor: 'blue',
         transform: 'translateX(100px)'
-      }))
+      })),
+      transition('normal => highlighted', animate(700)),
+      transition('highlighted => normal', animate(800))
     ])
   ],
 })
