@@ -1,23 +1,28 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import {trigger, state, style, animate, transition} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  animations: [
+    trigger('divState', [
+      state('normal', style({
+        'background-color': 'red',
+        transform: 'translateX(0)'
+      })),
+      state('highlighted', style({
+        backgroundColor: 'blue',
+        transform: 'translateX(100)'
+      }))
+    ])
+  ],
 })
 export class AppComponent {
-  username = '';
-  is_editable = false;
 
-  buttonClicked() {
-    this.username = 'Yay I am clicked!';
-  }
+  state = 'normal';
+  list = ['Milk', 'Sugar', 'Bread'];
 
-  isDisabled() {
-    if (this.username.length > 10) {
-     return this.is_editable = true;
-    } else {
-      return this.is_editable;
-    }
+  onAdd(item) {
+    this.list.push(item);
   }
 }
