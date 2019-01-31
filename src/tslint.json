@@ -16,6 +16,12 @@
       "no-inferrable-types": false,
       "max-line-length": false,
       "no-trailing-whitespace": false,
-      "comment-format": false
+      "comment-format": false,
+      "whitespace": false,
+      "quotemark": false,
+      "prefer-const": false,
+      "one-line": false,
+      "eofline": false,
+      "class-name": false
     }
 }
