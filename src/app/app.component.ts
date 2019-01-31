@@ -12,7 +12,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
       })),
       state('highlighted', style({
         backgroundColor: 'blue',
-        transform: 'translateX(100)'
+        transform: 'translateX(100px)'
       }))
     ])
   ],

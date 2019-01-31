@@ -22,6 +22,7 @@
       "prefer-const": false,
       "one-line": false,
       "eofline": false,
-      "class-name": false
+      "class-name": false,
+      "triple-equals": false
     }
 }
