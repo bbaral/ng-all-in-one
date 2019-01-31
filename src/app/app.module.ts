@@ -19,15 +19,7 @@ import {firebase} from '@firebase/app';
 import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
-export const firebaseAPIKEY = {
-  apiKey: "AIzaSyAGw-HyN0QYulY8TFTZc2QJoi3hMoDH0d0",
-    authDomain: "ng-recipe-book-60bd6.firebaseapp.com",
-    databaseURL: "https://ng-recipe-book-60bd6.firebaseio.com",
-    projectId: "ng-recipe-book-60bd6",
-    storageBucket: "ng-recipe-book-60bd6.appspot.com",
-    messagingSenderId: "301933281491"
-};
-firebase.initializeApp(firebaseAPIKEY);
+
 
 @NgModule({
   declarations: [
