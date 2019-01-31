@@ -30,7 +30,7 @@ Download the file and run following command. <br />
 `npm run basic:server` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//build the server side code<br />
 `npm run webpack:server` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//compile the server file<br />
 `node dist/server` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//run the server<br />
-<br /><br />
+<br />
 Navigate to `http://localhost:4000/`. The app will automatically reload if you change any of the source files.
 
 
