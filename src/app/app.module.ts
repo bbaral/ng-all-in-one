@@ -15,7 +15,7 @@ import {StoreModule} from '@ngrx/store';
 import {AppReducers} from './ngrx-global-store/app.reducer';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthEffects} from './auth/ngrx-auth-store/auth.effects';
-import * as firebase from 'firebase';
+import {firebase} from '@firebase/app';
 import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
@@ -34,7 +34,7 @@ firebase.initializeApp(firebaseAPIKEY);
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: "recipe-app"}),
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
