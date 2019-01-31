@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {environment} from '../environments/environment';
@@ -15,7 +16,6 @@ import {StoreModule} from '@ngrx/store';
 import {AppReducers} from './ngrx-global-store/app.reducer';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthEffects} from './auth/ngrx-auth-store/auth.effects';
-import {firebase} from '@firebase/app';
 import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
@@ -27,6 +27,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
   ],
   imports: [
     BrowserModule.withServerTransition({appId: "recipe-app"}),
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
