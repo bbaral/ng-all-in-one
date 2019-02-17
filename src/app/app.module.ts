@@ -9,12 +9,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MaterialModule} from './material.module';
 import { ShortenPipe } from './shorten.pipe';
 import {SearchFilterPipe} from './search-filter.pipe';
+import { DueDateComponent } from './due-date/due-date.component';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShortenPipe,
     SearchFilterPipe,
+    DueDateComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import {SearchFilterPipe} from './search-filter.pipe';
     AgGridModule.withComponents([]),
     MaterialModule
   ],
-  providers: [],
+  providers: [DatePipe],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
