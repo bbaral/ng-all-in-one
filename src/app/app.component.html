@@ -9,7 +9,11 @@
       <button class="btn btn-default" (click)="onGet()">Get Servers</button>
       <hr>
       <ul class="list-group" *ngFor="let server of servers">
-        <li class="list-group-item">{{ server.name }} (ID: {{ server.id }})</li>
+        <li class="list-group-item">{{ server.name }} (ID: {{ server.id }})
+          <button type="button" class="btn btn-default btn-sm" (click)="OnDelete(server)">
+            <span class="glyphicon glyphicon-remove"></span> Remove
+          </button>
+        </li>
       </ul>
     </div>
   </div>

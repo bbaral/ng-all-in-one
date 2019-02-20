@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {ErrorObserver, Observable, throwError} from 'rxjs';
+import { Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-import {error} from '@angular/compiler/src/util';
 
 @Injectable()
 export class ServerService {
@@ -36,6 +35,14 @@ export class ServerService {
         console.log(err);
         return throwError(err);
     }));
+  }
+
+  deleteServer(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.delete(`https://http-request-demo.firebaseio.com/data.json/`,
+       {headers: headers});
   }
 
   getAppName() {

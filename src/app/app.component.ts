@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {ServerService} from './services/server.service';
 import {error} from '@angular/compiler/src/util';
 import {HttpResponse} from '@angular/common/http';
+import {ServerModel} from './server.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class AppComponent {
   appName = this.serverService.getAppName();
-  servers = [
+
+  servers: ServerModel[] = [
     {
       name: 'Bikram',
       capacity: 10,
@@ -45,6 +47,12 @@ export class AppComponent {
         this.servers = servers;
       });
   }
+
+  OnDelete(item: ServerModel): void {
+    this.servers = this.servers.filter(i => i !== item);
+    this.serverService.deleteServer(item.id).subscribe(console.log);
+  }
+
 
   private generateId() {
     return Math.round(Math.random() * 10000);
