@@ -4,9 +4,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
-import {HttpClientModule} from '@angular/common/http';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {MaterialModule} from './material.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +12,9 @@ import {MaterialModule} from './material.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule,
     AgGridModule.withComponents([]),
-    MaterialModule
   ],
   providers: [],
   entryComponents: [],
