@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, TemplateRef, ViewChild, ViewRef} from '@angular/core';
-import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -13,8 +13,10 @@ export class AppComponent implements OnInit {
   forbiddenUsername = ['mia', 'jim'];
   @ViewChild('email', {read: TemplateRef}) email: TemplateRef<any>;
 
+  constructor(private formbuilder: FormBuilder) {}
+
   ngOnInit(): void {
-    this.signUpForm = new FormGroup({
+    this.signUpForm = this.formbuilder.group({
       'userData': new FormGroup({
         'username': new FormControl(null, [Validators.required, this.forbiddenNames.bind(this)]),
         'email': new FormControl(null,
@@ -23,9 +25,11 @@ export class AppComponent implements OnInit {
       'gender': new FormControl('Male', Validators.required),
       'hobbies': new FormArray([])
     });
-    this.signUpForm.valueChanges.subscribe((value) => {
-      this.email = value;
-      console.log(this.email);
+    this.signUpForm
+      .controls['username']
+      .valueChanges.subscribe((value) => {
+      console.log('Old username: ', this.signUpForm.value['username']);
+      console.log('new username: ', value);
     });
   }
 
