@@ -2,6 +2,13 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <label for="id">Identification</label>
+        <input type="text"
+               class="form-control"
+               formControlName="id"
+               #id (change)="store(id.value)"
+               id="id"
+               name="id">
         <div id="user-data" formGroupName="userData">
           <div class="form-group">
             <label for="username">Username</label>
