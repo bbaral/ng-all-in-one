@@ -1,0 +1,11 @@
+
+<div class="container">
+  <form>
+    <div class="checkbox">
+      <input type="checkbox"  #checkboxInput (change)="toggleVisibility($event)" />
+      <span *ngIf="marked">checked</span>
+      <span *ngIf="!marked">unchecked</span>
+    </div>
+  </form>
+</div>
+

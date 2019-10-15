@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContainerComponent } from './container/container.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
     ServerElementComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,
