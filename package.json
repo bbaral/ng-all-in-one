@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "^0.13.0",
     "@angular/animations": "^7.0.4",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
@@ -38,8 +39,8 @@
     "express": "^4.16.4",
     "firebase": "^5.11.0",
     "immutable": "^4.0.0-rc.12",
-    "jquery": "^3.3.1",
-    "lodash": "^4.17.11",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
     "popper": "^1.0.1",
     "rxjs": "~6.3.3",
     "ts-loader": "^5.3.3",
@@ -47,7 +48,6 @@
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "~7.0.4",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
