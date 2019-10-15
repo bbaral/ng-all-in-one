@@ -1,4 +1,7 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component,
+  ElementRef,
+  EventEmitter,
+  OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -7,6 +10,8 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 })
 export class CheckboxComponent implements OnInit {
 
+  @Output() editTextOnClick = new EventEmitter<{serverName: string, serverContent: string}>();
+  @Output() serverCreatedFromCockPit = new EventEmitter<{serverName: string, serverContent: string}>();
   @ViewChild('checkboxInput') checkboxInput: ElementRef;
   marked = false;
 

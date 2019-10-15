@@ -35,4 +35,9 @@ export class ServerElementComponent implements
     console.log(changes);
   }
 
+  toggleEdit(event) {
+    this.element.name = 'Replace Me';
+  }
+
+
 }
