@@ -55,7 +55,7 @@
     ],
     "no-construct": true,
     "no-debugger": true,
-    "no-duplicate-super": true,
+    "no-duplicate-super": false,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
@@ -117,15 +117,15 @@
       "check-separator",
       "check-type"
     ],
-    "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "component-class-suffix": true,
-    "directive-class-suffix": true
+    "no-output-on-prefix": false,
+    "use-input-property-decorator": false,
+    "use-output-property-decorator": false,
+    "use-host-property-decorator": false,
+    "no-input-rename": false,
+    "no-output-rename": false,
+    "use-life-cycle-interface": false,
+    "use-pipe-transform-interface": false,
+    "component-class-suffix": false,
+    "directive-class-suffix": false
   }
 }
