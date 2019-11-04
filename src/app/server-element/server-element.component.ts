@@ -4,7 +4,7 @@ import {
   OnInit,
   DoCheck,
   ViewEncapsulation,
-  SimpleChanges
+  SimpleChanges, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked
 } from '@angular/core';
 import {OnChanges} from '@angular/core';
 
@@ -17,18 +17,32 @@ import {OnChanges} from '@angular/core';
 export class ServerElementComponent implements
   OnInit,
   DoCheck,
-  OnChanges {
+  OnChanges, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked {
 
   @Input('srvElement') element: {type: string, name: string, content: string};
 
+  constructor() {
+    console.log(`constructor called!`);
+  }
   ngDoCheck() {
     console.log('ngDoCheck called');
   }
   ngOnInit() {
-    console.log(`ngOnInit called`);
+    console.log('ngOnInit called');
   }
-  constructor() {
-    console.log(`constructor called!`);
+  ngAfterViewInit(): void {
+    console.log('AfterViewInit called');
+  }
+  ngAfterViewChecked(): void {
+    console.log('AfterViewChecked called');
+  }
+
+  ngAfterContentInit(): void {
+    console.log('AfterContentInit Called');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('AfterContentChecked called');
   }
 
   ngOnChanges(changes: SimpleChanges) {
