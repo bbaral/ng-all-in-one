@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { PopupBoxComponent } from './popup-box/popup-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CockpitComponent,
     ServerElementComponent,
+    PopupBoxComponent,
   ],
   imports: [
     BrowserModule,

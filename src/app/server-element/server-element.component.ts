@@ -20,7 +20,7 @@ export class ServerElementComponent implements
   OnChanges, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked {
 
   @Input('srvElement') element: {type: string, name: string, content: string};
-  @Output('RemoveItem') onRemove = new EventEmitter();
+  @Output('RemoveItem') onRemove = new EventEmitter<any>();
 
   constructor() {
     console.log(`constructor called!`);
