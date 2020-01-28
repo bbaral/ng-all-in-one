@@ -4,7 +4,7 @@ import {
   OnInit,
   DoCheck,
   ViewEncapsulation,
-  SimpleChanges, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked
+  SimpleChanges, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked, EventEmitter, Output
 } from '@angular/core';
 import {OnChanges} from '@angular/core';
 
@@ -20,6 +20,7 @@ export class ServerElementComponent implements
   OnChanges, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked {
 
   @Input('srvElement') element: {type: string, name: string, content: string};
+  @Output('RemoveItem') onRemove = new EventEmitter();
 
   constructor() {
     console.log(`constructor called!`);

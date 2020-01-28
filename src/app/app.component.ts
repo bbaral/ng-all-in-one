@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import index from '@angular/cli/lib/cli';
 
 @Component({
   selector: 'app-root',
@@ -23,5 +24,8 @@ export class AppComponent {
       name: blueprintData.serverName,
       content: blueprintData.serverContent
     });
+  }
+  onDelete(index: number) {
+    this.serverElements.splice(index, 1);
   }
 }

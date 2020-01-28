@@ -1,4 +1,14 @@
+<div class="container">
 <div class="panel panel-default">
+    <div class="row">
+      <div class="col-xs-12">
+      <div class="pull-right" *ngIf="element.type === 'server'">
+        <button type="button" class="btn btn-default btn-sm" (click)="onRemove.emit(element);">
+          <span class="glyphicon glyphicon-remove"></span> Remove
+        </button>
+      </div>
+      </div>
+    </div>
   <div class="panel-heading">{{element.name}}</div>
     <div class="panel-body">
       <p>
@@ -7,4 +17,5 @@
       </p>
     </div>
   </div>
+</div>
 
