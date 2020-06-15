@@ -9,9 +9,9 @@ export class CockpitComponent implements OnInit {
 
   @Output() serverCreatedFromCockPit = new EventEmitter<{serverName: string, serverContent: string}>();
   @Output() blueprintCreatedFromCockPit = new EventEmitter<{serverName: string, serverContent: string}>();
-  @ViewChild('serverNameInput') serverNameInput: ElementRef;
-  @ViewChild('anotherServerNameInput') anotherServerNameInput: ElementRef;
-  @ViewChild('AddServerButton') AddServerButton: TemplateRef<string>;
+  @ViewChild('serverNameInput', { static: true }) serverNameInput: ElementRef;
+  @ViewChild('anotherServerNameInput', { static: true }) anotherServerNameInput: ElementRef;
+  @ViewChild('AddServerButton', { static: true }) AddServerButton: TemplateRef<string>;
 
   constructor() { }
 
