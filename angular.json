@@ -116,6 +116,10 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },
@@ -148,5 +152,8 @@
       }
     }
   },
-  "defaultProject": "basic"
+  "defaultProject": "basic",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

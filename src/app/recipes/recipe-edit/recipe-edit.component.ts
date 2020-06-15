@@ -61,7 +61,7 @@ export class RecipeEditComponent implements OnInit {
     let recipeDescription: string = '';
     let recipeIngredients = new FormArray([]);
     if (this.editMode) {
-      this.store.select('recipes').pipe(
+      this.store.select('recipeStateArray').pipe(
         take(1)
       ).subscribe((sub: fromRecipeReducer.RecipeState) => {
         const rec = sub.recipeStateArray[this.id];

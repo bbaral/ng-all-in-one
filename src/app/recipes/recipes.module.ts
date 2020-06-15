@@ -25,7 +25,7 @@ import {RecipeEffects} from './ngrx-recipe-store/recipe.effects';
     ReactiveFormsModule,
     SharedModule,
     RecipesRoutingModule,
-    StoreModule.forFeature('recipes', recipeReducer),
+    StoreModule.forFeature('recipeStateArray', recipeReducer),
     EffectsModule.forFeature([RecipeEffects])
   ],
   providers: [AuthGuardService]

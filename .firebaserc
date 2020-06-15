@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-recipe-book-60bd6": {
+      "hosting": {
+        "basic": [
+          "ng-recipe-book-60bd6"
+        ]
+      }
+    }
+  }
+}

@@ -25,12 +25,12 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
-      this.recipeState = this.store.select('recipes');
+      this.recipeState = this.store.select('recipeStateArray');
     });
   }
 
   onAddToShoppingList() {
-    this.store.select('recipes').pipe(
+    this.store.select('recipeStateArray').pipe(
       take(1)
     ).subscribe((recipeState1: fromRecipeReducer.RecipeState) => {
       this.store.dispatch(new ShoppingListActions.AddIngredients(

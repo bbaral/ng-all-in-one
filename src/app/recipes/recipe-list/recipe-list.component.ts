@@ -20,7 +20,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.recipesState = this.store.select('recipes');
+    this.recipesState = this.store.select('recipeStateArray');
   }
 
   onNewRecipe() {

@@ -34,11 +34,11 @@ export class RecipeEffects {
   @Effect({dispatch: false})
   recipeStore = this.action$.pipe(
     ofType(FromRecipeActions.STORE_RECIPES),
-    withLatestFrom(this.store.select('recipes')),
+    withLatestFrom(this.store.select('recipeStateArray')),
     switchMap(([action, state]) => {
       const request = new HttpRequest('PUT',
         'https://ng-recipe-book-60bd6.firebaseio.com/recipes.json',
-        state.recipes, { reportProgress: true});
+        state.recipeStateArray, { reportProgress: true});
       return this.http.request(request);
     })
   );
