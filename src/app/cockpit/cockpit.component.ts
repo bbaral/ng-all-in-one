@@ -21,6 +21,7 @@ export class CockpitComponent implements OnInit {
   onAddServerFromCockpit(nameInput: HTMLInputElement) {
     const serverInputValue = this.serverNameInput.nativeElement.value;
     const anotherInputValue = this.anotherServerNameInput.nativeElement.value;
+
     if (serverInputValue.length < 1 && anotherInputValue.length < 1) {
       alert('Server Name and Server Content cannot be empty');
     } else {
